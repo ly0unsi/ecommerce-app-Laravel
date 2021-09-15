@@ -28,7 +28,7 @@
                             reading...</a></p>
                 </div>
                 <div style="text-align: center" class="col-md-3">
-                    <img src="{{asset('storage/'.$product->image)}}" alt="">
+                    <img src="{{$product->image}}" alt="">
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
                             reading...</a></p>
                 </div>
                 <div style="text-align: center" class="col-md-3">
-                    <img src="{{asset('storage/'.$product->image)}}" alt="">
+                    <img src="{{$product->image}}" alt="">
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
                             reading...</a></p>
                 </div>
                 <div style="text-align: center" class="col-md-3">
-                    <img src="{{asset('storage/'.$product->image)}}" alt="">
+                    <img src="{{$product->image}}" alt="">
                 </div>
             </div>
         </div>
@@ -96,7 +96,7 @@
                 </a>
             </div>
             <div class="col-auto d-none d-lg-block">
-                <img height="250" width="200" src="{{asset('storage/'.$product->image)}}">
+                <img height="250" width="200" src="{{$product->image}}">
             </div>
         </div>
     </div>
@@ -131,7 +131,10 @@
 </div>
 @endif
 <main role="main" class="container">
+    @if ($slideAd)
     <a href="#"><img class="card-img-top mb-3" src="storage/{{$slideAd->image}}" alt=""></a>
+    @endif
+
     <div class="row">
         <div class="col-md-8 blog-main">
             @foreach ($posts as $key=>$post)
@@ -165,26 +168,34 @@
 
     </div>
 
-    <!-- /.blog-main -->
+
 
     <aside class="col-md-4 blog-sidebar">
         <div class="p-4 mb-3 bg-light rounded">
             <i class="fa fa-info-circle " style="float:right;font-size:25px"></i>
             <h4 class="font-italic">About</h4>
-
             <p class="mb-0">{{setting('site.description')}}</p>
         </div>
 
 
         <div class="col-md-12 mb-4">
             <div class="card h-100">
+                @if ($sideAd)
                 <a href="#"><img class="card-img-top" src="storage/{{$sideAd->image}}" alt=""></a>
+                @endif
+
                 <div class=" card-body">
                     <h4 class="card-title">
+                        @if ($sideAd)
                         <a style="color: crimson" href="#">{{$sideAd->title}}</a>
+                        @endif
+
                     </h4>
                     <h5>$24.99</h5>
+                    @if ($sideAd)
                     <p class="card-text">{!!$sideAd->body!!}</p>
+                    @endif
+
                 </div>
                 <div class="card-footer">
                     <small style="color: crimson" class="text-muted">★ ★ ★ ★ ☆</small>

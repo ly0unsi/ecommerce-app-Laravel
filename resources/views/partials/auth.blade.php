@@ -28,8 +28,7 @@
                             alt="profile-sample1" class="background" />
                     </div>
                     <div class="profile-thumb-block">
-                        <img src="http://127.0.0.1:8000/storage/users/October2020/IRTXoKtDOdzrOWuIFPnq.jpg"
-                            alt="profile-image" class="profile" />
+                        <img src="{{asset('users/profile.jpg')}}" alt="profile-image" class="profile" />
                     </div>
                     <div class="card-content">
                         <h2> {{ Auth::user()->name }}<small>User</small></h3>

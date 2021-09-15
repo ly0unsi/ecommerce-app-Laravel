@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->string('slug');
             $table->integer('price');
-            $table->string('image');
+            $table->string('image')->default('https://via.placeholder.com/200x250');
             $table->timestamps();
         });
     }
